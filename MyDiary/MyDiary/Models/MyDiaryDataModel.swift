@@ -7,6 +7,7 @@
 //
 
 struct MyDiaryDataModel {
+    
     static let ID = "id"
     static let DATE = "dateStr"
     static let DESC = "content"

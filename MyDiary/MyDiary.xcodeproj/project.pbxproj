@@ -43,8 +43,8 @@
 		FC6FEA022512231600258A54 /* MyDiaryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEA012512231600258A54 /* MyDiaryDataModel.swift */; };
 		FC6FEA0525122A9600258A54 /* DiaryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEA0425122A9600258A54 /* DiaryListViewController.swift */; };
 		FC6FEA0725122AAF00258A54 /* DiaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEA0625122AAF00258A54 /* DiaryListViewModel.swift */; };
-		FC6FEA0C25123F8000258A54 /* DiaryDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEA0A25123F8000258A54 /* DiaryDataView.swift */; };
-		FC6FEA0D25123F8000258A54 /* DiaryDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6FEA0B25123F8000258A54 /* DiaryDataView.xib */; };
+		FC6FEA0C25123F8000258A54 /* DiaryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEA0A25123F8000258A54 /* DiaryDetailsView.swift */; };
+		FC6FEA0D25123F8000258A54 /* DiaryDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6FEA0B25123F8000258A54 /* DiaryDetailsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,8 +88,8 @@
 		FC6FEA012512231600258A54 /* MyDiaryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryDataModel.swift; sourceTree = "<group>"; };
 		FC6FEA0425122A9600258A54 /* DiaryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewController.swift; sourceTree = "<group>"; };
 		FC6FEA0625122AAF00258A54 /* DiaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewModel.swift; sourceTree = "<group>"; };
-		FC6FEA0A25123F8000258A54 /* DiaryDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDataView.swift; sourceTree = "<group>"; };
-		FC6FEA0B25123F8000258A54 /* DiaryDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryDataView.xib; sourceTree = "<group>"; };
+		FC6FEA0A25123F8000258A54 /* DiaryDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryDetailsView.swift; sourceTree = "<group>"; };
+		FC6FEA0B25123F8000258A54 /* DiaryDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryDetailsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				FC10D8BD2511F600000214D3 /* AppDelegate */,
-				FC10D8BE2511F662000214D3 /* Assets */,
 				FC10D8DB2511FD8D000214D3 /* Utility */,
 				FC10D8BF2511F6CA000214D3 /* Models */,
 				FC10D8C02511F713000214D3 /* NetworkLayer */,
@@ -162,13 +161,6 @@
 				FC10D8B72511F5B9000214D3 /* Info.plist */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		FC10D8BE2511F662000214D3 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		FC10D8BF2511F6CA000214D3 /* Models */ = {
@@ -280,8 +272,8 @@
 		FC6FE9F525120D4300258A54 /* Custom View */ = {
 			isa = PBXGroup;
 			children = (
-				FC6FEA0A25123F8000258A54 /* DiaryDataView.swift */,
-				FC6FEA0B25123F8000258A54 /* DiaryDataView.xib */,
+				FC6FEA0A25123F8000258A54 /* DiaryDetailsView.swift */,
+				FC6FEA0B25123F8000258A54 /* DiaryDetailsView.xib */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -374,7 +366,7 @@
 				FC10D8EB2511FDFD000214D3 /* SFUIText-Medium.ttf in Resources */,
 				FC10D8DA2511F7D3000214D3 /* LaunchScreen.storyboard in Resources */,
 				FC10D8F12511FDFD000214D3 /* SFUIText-LightItalic.ttf in Resources */,
-				FC6FEA0D25123F8000258A54 /* DiaryDataView.xib in Resources */,
+				FC6FEA0D25123F8000258A54 /* DiaryDetailsView.xib in Resources */,
 				FC10D8F62511FDFD000214D3 /* SFUIText-RegularItalic.ttf in Resources */,
 				FC6FE9F025120B3000258A54 /* DiaryListTblVwCell.xib in Resources */,
 				FC10D8F32511FDFD000214D3 /* SFUIText-MediumItalic.ttf in Resources */,
@@ -433,7 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC6FEA0C25123F8000258A54 /* DiaryDataView.swift in Sources */,
+				FC6FEA0C25123F8000258A54 /* DiaryDetailsView.swift in Sources */,
 				FC6FEA0725122AAF00258A54 /* DiaryListViewModel.swift in Sources */,
 				FC10D8C52511F713000214D3 /* WebError.swift in Sources */,
 				FC10D8C62511F713000214D3 /* Environment.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiaryListTblVwCell: UITableViewCell {
+final class DiaryListTblVwCell: UITableViewCell {
     
     //MARK: - Outlets
     @IBOutlet private weak var lblTitle: UILabel!
@@ -38,7 +38,7 @@ class DiaryListTblVwCell: UITableViewCell {
     }
     
     private func setDiaryData(with data: DiaryData) {
-        let diaryView = DiaryDataView().getXIB(type: DiaryDataView.self)
+        let diaryView = DiaryDetailsView().getViewOfType(type: DiaryDetailsView.self)
         diaryView.diaryDetail   = data
         diaryView.diaryType     = diaryDataObj.type
         diaryView.editTap       = { id in

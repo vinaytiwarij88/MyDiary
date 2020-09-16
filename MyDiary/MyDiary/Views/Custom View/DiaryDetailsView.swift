@@ -3,15 +3,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class DiaryDataView: UIView {
+final class DiaryDetailsView: UIView {
     
     //MARK: - Outlets
-    @IBOutlet private weak var bgView           : UIView!
-    @IBOutlet private weak var titleLabel       : UILabel!
-    @IBOutlet private weak var detailLabel      : UILabel!
-    @IBOutlet private weak var diaryTimeLabel   : UILabel!
-    @IBOutlet private weak var editButton       : UIButton!
-    @IBOutlet private weak var deleteButton     : UIButton!
+    @IBOutlet private weak var vwParent           : UIView!
+    @IBOutlet private weak var lblTitle       : UILabel!
+    @IBOutlet private weak var lblDesc      : UILabel!
+    @IBOutlet private weak var lblDateTime   : UILabel!
+    @IBOutlet private weak var btnEdit       : UIButton!
+    @IBOutlet private weak var btnDelete     : UIButton!
     
     //MARK: - Callbacks
     var editTap:((String) -> Void)?
@@ -24,10 +24,10 @@ class DiaryDataView: UIView {
     var diaryDetail : DiaryData! {
         didSet {
             prapareActionMethods()
-            titleLabel.text = diaryDetail.title
-            detailLabel.text = diaryDetail.content
+            lblTitle.text = diaryDetail.title
+            lblDesc.text = diaryDetail.content
             DispatchQueue.main.async {
-                self.bgView.dropShadow(color: .gray, opacity: 0.4, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
+                self.vwParent.dropShadow(color: .gray, opacity: 0.4, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
             }
         }
     }
@@ -37,9 +37,9 @@ class DiaryDataView: UIView {
             if let date = diaryDetail.date {
                 switch  diaryType {
                 case .today, .yesterday:
-                    diaryTimeLabel.text = getHourDifference(from: date)
+                    lblDateTime.text = getHourDifference(from: date)
                 case .old:
-                    diaryTimeLabel.text = getWeekDifference(from: date)
+                    lblDateTime.text = getWeekDifference(from: date)
                 case .none:
                     break
                 }
@@ -49,14 +49,14 @@ class DiaryDataView: UIView {
     
     //MARK: - Action Methods
     private func prapareActionMethods() {
-        editButton.rx.tap.subscribe(onNext: { [weak self] in
+        btnEdit.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = `self` else {
                 return
             }
             self.editTap?(self.diaryDetail.id ?? "")
         }).disposed(by: disposeBag)
         
-        deleteButton.rx.tap.subscribe(onNext: { [weak self] in
+        btnDelete.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = `self` else {
                 return
             }

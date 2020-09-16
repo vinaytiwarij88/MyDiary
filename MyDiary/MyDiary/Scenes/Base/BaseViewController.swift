@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SVProgressHUD
 
 class BaseViewController: UIViewController {
     
@@ -17,6 +18,12 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    ///`Activity Indicator`
+    func startLoading() {
+        SVProgressHUD.show()
+    }
+    func stopLoading() {
+        SVProgressHUD.dismiss()
+    }
 }
 

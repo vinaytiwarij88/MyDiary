@@ -20,6 +20,4 @@ enum ViewModelState<T> {
 class BaseViewModel {
     // Dispose Bag
     let disposeBag  = DisposeBag()
-    let alertDialog = PublishSubject<(String)>()
-    let toastDialog = PublishSubject<(String)>()
 }

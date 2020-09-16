@@ -9,6 +9,7 @@
 import Foundation
 
 enum DiaryType {
+    
     case today
     case yesterday
     case old(_ month: String)
@@ -16,9 +17,9 @@ enum DiaryType {
     var title: String {
         switch self {
         case .today:
-            return "Today"
+            return "Today".localized
         case .yesterday:
-            return "Yesterday"
+            return "Yesterday".localized
         case .old(let month):
             return month
         }

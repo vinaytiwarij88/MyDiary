@@ -15,11 +15,11 @@ struct AppConstant {
     static let appName = "MyDiary"
     
     struct Alert {
-        static let NO =   "No"
-        static let YES = "Yes"
+        static let NO =   "No".localized
+        static let YES = "Yes".localized
         static let TITLE_REQUIRED = appName
         static let TITLE_CONFIRMATION = appName
-        static let SAVE_DETAILS = "Please enter required detail to save the journal."
-        static let REMOVE_ITEM = "Are you sure that you want to remove this item?"
+        static let SAVE_DETAILS = "Please enter required detail to save the journal.".localized
+        static let REMOVE_ITEM = "Are you sure that you want to remove this item?".localized
     }
 }

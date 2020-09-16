@@ -24,11 +24,11 @@ final class DiaryListViewModel: BaseViewModel {
     }
     
     //MARK: - Variables
-    var diaryList           =  [DiaryData]()
-    var formatedDiaryList   =  BehaviorRelay<[DiaryGroup]>(value: [])
+    var diaryItemList           =  [DiaryData]()
+    var formatedDiaryItemList   =  BehaviorRelay<[DiaryGroup]>(value: [])
     
     //MARK: - API Call
-    func getDiaryList() {
+    private func getDiaryList() {
         state.onNext(.loading)
         
         Webservice.API.sendRequest(.getDiaryList([:]), type: [DiaryData].self)
@@ -38,25 +38,28 @@ final class DiaryListViewModel: BaseViewModel {
                 guard let `self` = self else { return }
                 
                 if diaryResponse.count > 0 {
-                    //print(diaryResponse)
-                    self.diaryList = diaryResponse
+                    print(diaryResponse)
+                    self.state.onNext(.success(self))
+                    self.diaryItemList = diaryResponse
                     self.formatDiaryData(diaryResponse)
                     DatabaseManager.shared.deleteEntity(DataEntity.diaryData.rawValue)
                     self.addDataToDB(diaryResponse)
-                    self.state.onNext(.success(self))
                     
                 } else {
                     self.state.onNext(.failure(.noData))
                 }
                 
-                }, onError: { [weak self] error in
-                    guard let `self` = self else { return }
-                    self.state.onNext(.failure(error as! WebError))
-                    self.state.onNext(.finish(false))
+                },
+                onError: { [weak self] error in
+                guard let `self` = self else { return }
+                self.state.onNext(.failure(error as! WebError))
+                self.state.onNext(.finish(false))
                     
-                }, onCompleted: { [weak self] in
-                    guard let `self` = self else { return }
-                    self.state.onNext(.finish(false))
+                },
+                       
+                onCompleted: { [weak self] in
+                guard let `self` = self else { return }
+                self.state.onNext(.finish(false))
                     
             }).disposed(by: disposeBag)
     }
@@ -71,7 +74,7 @@ extension DiaryListViewModel {
                 result.append(DiaryData(data: data))
             }
             if fetchedData.count > 0 {
-                diaryList = fetchedData
+                diaryItemList = fetchedData
                 formatDiaryData(fetchedData)
                 
             } else {
@@ -79,7 +82,7 @@ extension DiaryListViewModel {
                     getDiaryList()
                 } else {
                     viewController.addNodataView()
-                    formatedDiaryList.accept([])
+                    formatedDiaryItemList.accept([])
                 }
             }
         }
@@ -136,7 +139,7 @@ extension DiaryListViewModel {
         if oldData.count > 0 {
             formatedArray += oldData
         }
-        formatedDiaryList.accept(formatedArray)
+        formatedDiaryItemList.accept(formatedArray)
     }
     
     private func getType(from date : Date) -> DiaryType {

@@ -26,10 +26,10 @@ class DatabaseManager {
         let entityDesc = NSEntityDescription.entity(forEntityName: DataEntity.diaryData.rawValue, in: self.managedContext)
         let object = NSManagedObject(entity: entityDesc!, insertInto: self.managedContext);
         
-        object.setValue(diaryData.title ?? "", forKey: AppConstant.MyDiaryDataModel.TITLE)
-        object.setValue(diaryData.id ?? "", forKey: AppConstant.MyDiaryDataModel.ID)
-        object.setValue(diaryData.desc ?? "", forKey: AppConstant.MyDiaryDataModel.DESC)
-        object.setValue(diaryData.latestDate ?? "", forKey: AppConstant.MyDiaryDataModel.DATE)
+        object.setValue(diaryData.title ?? "", forKey: MyDiaryDataModel.TITLE)
+        object.setValue(diaryData.id ?? "", forKey: MyDiaryDataModel.ID)
+        object.setValue(diaryData.desc ?? "", forKey: MyDiaryDataModel.DESC)
+        object.setValue(diaryData.latestDate ?? "", forKey: MyDiaryDataModel.DATE)
         saveData()
     }
     
@@ -68,9 +68,9 @@ class DatabaseManager {
         guard let fetchedResults = try? managedContext.fetch(Request) as? [NSManagedObject] else { return  }
         if let fetchedObj = fetchedResults.first {
             let date = DateManager.dateStyleServerDate.string(from: Date())
-            fetchedObj.setValue(title, forKey: AppConstant.MyDiaryDataModel.TITLE)
-            fetchedObj.setValue(content, forKey: AppConstant.MyDiaryDataModel.DESC)
-            fetchedObj.setValue(date, forKey: AppConstant.MyDiaryDataModel.DATE)
+            fetchedObj.setValue(title, forKey: MyDiaryDataModel.TITLE)
+            fetchedObj.setValue(content, forKey: MyDiaryDataModel.DESC)
+            fetchedObj.setValue(date, forKey: MyDiaryDataModel.DATE)
         }
         self.saveData()
     }

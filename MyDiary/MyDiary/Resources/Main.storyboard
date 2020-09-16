@@ -1,24 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ddg-CH-4a3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Bold.ttf">
+            <string>SFUIText-Bold</string>
+        </array>
+        <array key="SFUIText-Regular.ttf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Diary Title-->
+        <scene sceneID="Y8H-91-F0h">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="ddg-CH-4a3" customClass="DiaryDetailViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BFU-5d-qli">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hto-xc-tw8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="752"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPu-zk-TxB">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="184"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2X-2A-Lkp">
+                                                <rect key="frame" x="24" y="24" width="366" height="14"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="12"/>
+                                                <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQd-W4-fr3">
+                                                <rect key="frame" x="24" y="48" width="366" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="PDN-RQ-bc0"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rW7-Du-gTr" userLabel="SepratorView">
+                                                <rect key="frame" x="24" y="84" width="366" height="1"/>
+                                                <color key="backgroundColor" red="0.92549019610000005" green="0.92941176469999998" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Ii1-av-B0y"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9c-Rm-Mqi">
+                                                <rect key="frame" x="24" y="109" width="366" height="14"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="12"/>
+                                                <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" text="Hello!" translatesAutoresizingMaskIntoConstraints="NO" id="htj-Za-yHj">
+                                                <rect key="frame" x="20" y="138" width="374" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u22-en-nwO" userLabel="SepratorView">
+                                                <rect key="frame" x="24" y="173" width="366" height="1"/>
+                                                <color key="backgroundColor" red="0.92549019610000005" green="0.92941176469999998" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="FFN-Ss-3MB"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="mQd-W4-fr3" firstAttribute="leading" secondItem="PPu-zk-TxB" secondAttribute="leading" constant="24" id="4SI-R9-bkO"/>
+                                            <constraint firstItem="htj-Za-yHj" firstAttribute="leading" secondItem="PPu-zk-TxB" secondAttribute="leading" constant="20" id="52y-bC-hZv"/>
+                                            <constraint firstAttribute="bottom" secondItem="u22-en-nwO" secondAttribute="bottom" constant="10" id="5Ng-sP-sgy"/>
+                                            <constraint firstAttribute="trailing" secondItem="rW7-Du-gTr" secondAttribute="trailing" constant="24" id="C6q-1N-Ifc"/>
+                                            <constraint firstAttribute="trailing" secondItem="mQd-W4-fr3" secondAttribute="trailing" constant="24" id="Ecx-n7-9r4"/>
+                                            <constraint firstAttribute="trailing" secondItem="htj-Za-yHj" secondAttribute="trailing" constant="20" id="KJF-1i-0kM"/>
+                                            <constraint firstItem="rW7-Du-gTr" firstAttribute="leading" secondItem="PPu-zk-TxB" secondAttribute="leading" constant="24" id="MqF-QI-hrS"/>
+                                            <constraint firstItem="u22-en-nwO" firstAttribute="top" secondItem="htj-Za-yHj" secondAttribute="bottom" constant="1" id="PsS-e2-rwy"/>
+                                            <constraint firstAttribute="trailing" secondItem="a9c-Rm-Mqi" secondAttribute="trailing" constant="24" id="R5e-E3-x2c"/>
+                                            <constraint firstItem="a9c-Rm-Mqi" firstAttribute="top" secondItem="rW7-Du-gTr" secondAttribute="bottom" constant="24" id="VMi-NW-Z6S"/>
+                                            <constraint firstItem="u22-en-nwO" firstAttribute="leading" secondItem="PPu-zk-TxB" secondAttribute="leading" constant="24" id="YjO-6K-MfF"/>
+                                            <constraint firstAttribute="trailing" secondItem="U2X-2A-Lkp" secondAttribute="trailing" constant="24" id="dqj-pM-HQh"/>
+                                            <constraint firstItem="U2X-2A-Lkp" firstAttribute="leading" secondItem="PPu-zk-TxB" secondAttribute="leading" constant="24" id="eE3-7i-hdJ"/>
+                                            <constraint firstItem="rW7-Du-gTr" firstAttribute="top" secondItem="mQd-W4-fr3" secondAttribute="bottom" constant="1" id="mFu-47-6vD"/>
+                                            <constraint firstItem="htj-Za-yHj" firstAttribute="top" secondItem="a9c-Rm-Mqi" secondAttribute="bottom" constant="15" id="mgb-se-R6Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="u22-en-nwO" secondAttribute="trailing" constant="24" id="voi-gV-Knl"/>
+                                            <constraint firstItem="mQd-W4-fr3" firstAttribute="top" secondItem="U2X-2A-Lkp" secondAttribute="bottom" constant="10" id="vok-I7-fhf"/>
+                                            <constraint firstItem="a9c-Rm-Mqi" firstAttribute="leading" secondItem="PPu-zk-TxB" secondAttribute="leading" constant="24" id="z3j-tQ-U1Y"/>
+                                            <constraint firstItem="U2X-2A-Lkp" firstAttribute="top" secondItem="PPu-zk-TxB" secondAttribute="top" constant="24" id="zeF-f7-Spl"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PPu-zk-TxB" secondAttribute="bottom" id="7CZ-Kx-6of"/>
+                                    <constraint firstAttribute="trailing" secondItem="PPu-zk-TxB" secondAttribute="trailing" id="HjZ-mg-AoJ"/>
+                                    <constraint firstItem="PPu-zk-TxB" firstAttribute="top" secondItem="Hto-xc-tw8" secondAttribute="top" id="Umw-b3-ux0"/>
+                                    <constraint firstItem="PPu-zk-TxB" firstAttribute="leading" secondItem="Hto-xc-tw8" secondAttribute="leading" id="aD9-F5-alL"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVF-ZV-QzQ">
+                                <rect key="frame" x="24" y="806" width="366" height="48"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.12941176469999999" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="HfB-he-k5E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="12"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rkC-YC-jUm" firstAttribute="bottom" secondItem="gVF-ZV-QzQ" secondAttribute="bottom" constant="8" id="3Z2-HI-zau"/>
+                            <constraint firstItem="gVF-ZV-QzQ" firstAttribute="top" secondItem="Hto-xc-tw8" secondAttribute="bottom" constant="10" id="El9-Qe-x4k"/>
+                            <constraint firstItem="Hto-xc-tw8" firstAttribute="leading" secondItem="rkC-YC-jUm" secondAttribute="leading" id="KqX-2p-HcZ"/>
+                            <constraint firstItem="PPu-zk-TxB" firstAttribute="width" secondItem="BFU-5d-qli" secondAttribute="width" id="Ske-So-QqK"/>
+                            <constraint firstItem="Hto-xc-tw8" firstAttribute="top" secondItem="rkC-YC-jUm" secondAttribute="top" id="Ulm-Gl-3vb"/>
+                            <constraint firstItem="Hto-xc-tw8" firstAttribute="trailing" secondItem="rkC-YC-jUm" secondAttribute="trailing" id="cCI-Nl-Nb4"/>
+                            <constraint firstItem="gVF-ZV-QzQ" firstAttribute="leading" secondItem="rkC-YC-jUm" secondAttribute="leading" constant="24" id="fV8-P2-gGl"/>
+                            <constraint firstItem="rkC-YC-jUm" firstAttribute="trailing" secondItem="gVF-ZV-QzQ" secondAttribute="trailing" constant="24" id="zfs-8D-xQf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rkC-YC-jUm"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Diary Title" id="RET-Uf-sNL"/>
+                    <connections>
+                        <outlet property="btnSave" destination="gVF-ZV-QzQ" id="wk2-oF-aVC"/>
+                        <outlet property="txtFTitle" destination="mQd-W4-fr3" id="pLV-Jd-QHu"/>
+                        <outlet property="txtVContent" destination="htj-Za-yHj" id="i7A-il-dYL"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nv0-zy-Nfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1862" y="139"/>
         </scene>
     </scenes>
 </document>

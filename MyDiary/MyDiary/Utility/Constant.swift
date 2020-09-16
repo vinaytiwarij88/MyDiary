@@ -12,11 +12,10 @@ import UIKit
 struct AppConstant {
     
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    static let appName = "MyDiary"
     
-    struct MyDiaryDataModel {
-        static let ID = "id"
-        static let DATE = "latestDate"
-        static let DESC = "desc"
-        static let TITLE = "title"
+    struct Alert {
+        static let TITLE_REQUIRED = appName
+        static let SAVE_DETAILS = "Please enter required detail to save the journal."
     }
 }

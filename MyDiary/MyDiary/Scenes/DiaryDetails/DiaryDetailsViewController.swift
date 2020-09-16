@@ -32,7 +32,7 @@ class DiaryDetailViewController: BaseViewController {
     private func setData() {
         if let diaryObj = diaryData {
             txtFTitle.text = diaryObj.title
-            txtVContent.text = diaryObj.desc
+            txtVContent.text = diaryObj.content
         }
         txtFTitle.rx.text.orEmpty.bind(to: viewModel.title).disposed(by: disposeBag)
         txtVContent.rx.text.orEmpty.bind(to: viewModel.detail).disposed(by: disposeBag)

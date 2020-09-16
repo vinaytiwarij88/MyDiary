@@ -5,9 +5,14 @@
 //  Created by PCQ224 on 16/09/20.
 //  Copyright © 2020 PCQ224. All rights reserved.
 //
-
 import UIKit
 import CoreData
+
+final class Application {
+    class var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+}
 
 enum DataEntity: String {
     case diaryData = "MyDiaryData"
@@ -16,7 +21,7 @@ enum DataEntity: String {
 class DatabaseManager {
     
     // MARK: - ManagedContext
-    private let managedContext = AppConstant.appDelegate.persistentContainer.viewContext
+    private let managedContext = Application.shared.persistentContainer.viewContext
     
     // MARK: - Get Instance
     static let shared = DatabaseManager()
@@ -25,11 +30,10 @@ class DatabaseManager {
     func AddDiaryData(diaryData: DiaryData) {
         let entityDesc = NSEntityDescription.entity(forEntityName: DataEntity.diaryData.rawValue, in: self.managedContext)
         let object = NSManagedObject(entity: entityDesc!, insertInto: self.managedContext);
-        
-        object.setValue(diaryData.title ?? "", forKey: MyDiaryDataModel.TITLE)
-        object.setValue(diaryData.id ?? "", forKey: MyDiaryDataModel.ID)
-        object.setValue(diaryData.desc ?? "", forKey: MyDiaryDataModel.DESC)
-        object.setValue(diaryData.latestDate ?? "", forKey: MyDiaryDataModel.DATE)
+        object.setValue(diaryData.title ?? "", forKey: "title")
+        object.setValue(diaryData.id ?? "", forKey: "id")
+        object.setValue(diaryData.content ?? "", forKey: "content")
+        object.setValue(diaryData.dateStr ?? "", forKey: "dateStr")
         saveData()
     }
     
@@ -68,9 +72,9 @@ class DatabaseManager {
         guard let fetchedResults = try? managedContext.fetch(Request) as? [NSManagedObject] else { return  }
         if let fetchedObj = fetchedResults.first {
             let date = DateManager.dateStyleServerDate.string(from: Date())
-            fetchedObj.setValue(title, forKey: MyDiaryDataModel.TITLE)
-            fetchedObj.setValue(content, forKey: MyDiaryDataModel.DESC)
-            fetchedObj.setValue(date, forKey: MyDiaryDataModel.DATE)
+            fetchedObj.setValue(title, forKey: "title")
+            fetchedObj.setValue(content, forKey: "content")
+            fetchedObj.setValue(date, forKey: "dateStr")
         }
         self.saveData()
     }

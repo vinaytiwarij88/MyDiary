@@ -8,7 +8,7 @@
 
 struct MyDiaryDataModel {
     static let ID = "id"
-    static let DATE = "latestDate"
-    static let DESC = "desc"
+    static let DATE = "dateStr"
+    static let DESC = "content"
     static let TITLE = "title"
 }

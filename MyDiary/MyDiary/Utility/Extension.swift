@@ -129,6 +129,22 @@ extension DateFormatter {
     }
 }
 
+extension Date {
+    func offset(from: Date) -> (Calendar.Component, Int)? {
+        let descendingOrderedComponents = [Calendar.Component.year, .month, .day, .hour, .minute]
+        let dateComponents = Calendar.current.dateComponents(Set(descendingOrderedComponents), from: from, to: self)
+        let arrayOfTuples = descendingOrderedComponents.map { ($0, dateComponents.value(for: $0)) }
+        
+        for (component, value) in arrayOfTuples {
+            if let value = value, value > 0 {
+                return (component, value)
+            }
+        }
+        
+        return nil
+    }
+}
+
 //MARK: - UIStackView
 extension UIStackView {
     

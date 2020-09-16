@@ -17,11 +17,11 @@ class DiaryListTblVwCell: UITableViewCell {
     //MARK: - Callbacks
     var btnEditClicked:((String) -> Void)?
     var btnDeleteClicked:((String) -> Void)?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -41,12 +41,13 @@ class DiaryListTblVwCell: UITableViewCell {
         let diaryView = DiaryDataView().getXIB(type: DiaryDataView.self)
         diaryView.diaryDetail   = data
         diaryView.diaryType     = diaryDataObj.type
-        diaryView.btnEditClicked       = { id in
+        diaryView.editTap       = { id in
             self.btnEditClicked?(id)
         }
-        diaryView.btnDeleteClicked     = { id in
+        diaryView.deleteTap     = { id in
             self.btnDeleteClicked?(id)
         }
         stvDiaries.addArrangedSubview(diaryView)
     }
+   
 }

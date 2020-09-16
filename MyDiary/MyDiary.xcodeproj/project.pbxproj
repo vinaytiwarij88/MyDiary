@@ -34,6 +34,13 @@
 		FC6FE9E1251201B600258A54 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FE9E0251201B600258A54 /* DatabaseManager.swift */; };
 		FC6FE9E32512025200258A54 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FE9E22512025200258A54 /* Constant.swift */; };
 		FC6FE9E52512048C00258A54 /* MyDiaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FE9E42512048C00258A54 /* MyDiaryData.swift */; };
+		FC6FE9E82512097E00258A54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FE9E72512097E00258A54 /* BaseViewController.swift */; };
+		FC6FE9EA251209A200258A54 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FE9E9251209A200258A54 /* BaseViewModel.swift */; };
+		FC6FE9EF25120B3000258A54 /* DiaryListTblVwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FE9ED25120B3000258A54 /* DiaryListTblVwCell.swift */; };
+		FC6FE9F025120B3000258A54 /* DiaryListTblVwCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6FE9EE25120B3000258A54 /* DiaryListTblVwCell.xib */; };
+		FC6FE9F725120D7100258A54 /* DiaryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6FE9F625120D7100258A54 /* DiaryDetailView.xib */; };
+		FC6FE9F925120D9F00258A54 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FE9F825120D9F00258A54 /* DiaryDetailView.swift */; };
+		FC6FE9FB25120E1900258A54 /* DiaryWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6FE9FA25120E1900258A54 /* DiaryWrappers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +75,13 @@
 		FC6FE9E0251201B600258A54 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		FC6FE9E22512025200258A54 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FC6FE9E42512048C00258A54 /* MyDiaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryData.swift; sourceTree = "<group>"; };
+		FC6FE9E72512097E00258A54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FC6FE9E9251209A200258A54 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		FC6FE9ED25120B3000258A54 /* DiaryListTblVwCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListTblVwCell.swift; sourceTree = "<group>"; };
+		FC6FE9EE25120B3000258A54 /* DiaryListTblVwCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryListTblVwCell.xib; sourceTree = "<group>"; };
+		FC6FE9F625120D7100258A54 /* DiaryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryDetailView.xib; sourceTree = "<group>"; };
+		FC6FE9F825120D9F00258A54 /* DiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailView.swift; sourceTree = "<group>"; };
+		FC6FE9FA25120E1900258A54 /* DiaryWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryWrappers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +139,7 @@
 				FC10D8DB2511FD8D000214D3 /* Utility */,
 				FC10D8BF2511F6CA000214D3 /* Models */,
 				FC10D8C02511F713000214D3 /* NetworkLayer */,
+				FC6FE9EB25120ADE00258A54 /* Views */,
 				FC10D8C92511F730000214D3 /* Scenes */,
 				FC10D8F72511FFCB000214D3 /* Core Data */,
 				FC10D8CA2511F765000214D3 /* Resources */,
@@ -153,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FC6FE9E42512048C00258A54 /* MyDiaryData.swift */,
+				FC6FE9FA25120E1900258A54 /* DiaryWrappers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +187,7 @@
 		FC10D8C92511F730000214D3 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FC6FE9E62512096400258A54 /* Base */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -221,6 +238,42 @@
 				FC6FE9E0251201B600258A54 /* DatabaseManager.swift */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		FC6FE9E62512096400258A54 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FC6FE9E72512097E00258A54 /* BaseViewController.swift */,
+				FC6FE9E9251209A200258A54 /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FC6FE9EB25120ADE00258A54 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC6FE9F525120D4300258A54 /* Custom View */,
+				FC6FE9EC25120ADE00258A54 /* TableView Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC6FE9EC25120ADE00258A54 /* TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FC6FE9ED25120B3000258A54 /* DiaryListTblVwCell.swift */,
+				FC6FE9EE25120B3000258A54 /* DiaryListTblVwCell.xib */,
+			);
+			path = "TableView Cell";
+			sourceTree = "<group>";
+		};
+		FC6FE9F525120D4300258A54 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				FC6FE9F625120D7100258A54 /* DiaryDetailView.xib */,
+				FC6FE9F825120D9F00258A54 /* DiaryDetailView.swift */,
+			);
+			path = "Custom View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +347,10 @@
 				FC10D8DA2511F7D3000214D3 /* LaunchScreen.storyboard in Resources */,
 				FC10D8F12511FDFD000214D3 /* SFUIText-LightItalic.ttf in Resources */,
 				FC10D8F62511FDFD000214D3 /* SFUIText-RegularItalic.ttf in Resources */,
+				FC6FE9F025120B3000258A54 /* DiaryListTblVwCell.xib in Resources */,
 				FC10D8F32511FDFD000214D3 /* SFUIText-MediumItalic.ttf in Resources */,
 				FC10D8D92511F7D3000214D3 /* Main.storyboard in Resources */,
+				FC6FE9F725120D7100258A54 /* DiaryDetailView.xib in Resources */,
 				FC10D8F52511FDFD000214D3 /* SFUIText-HeavyItalic.ttf in Resources */,
 				FC10D8EF2511FDFD000214D3 /* SFUIText-Light.ttf in Resources */,
 			);
@@ -355,10 +410,15 @@
 				FC10D8DD2511FDA1000214D3 /* Extension.swift in Sources */,
 				FC10D8FA25120022000214D3 /* MyDiary.xcdatamodeld in Sources */,
 				FC10D8AA2511F5B8000214D3 /* AppDelegate.swift in Sources */,
+				FC6FE9E82512097E00258A54 /* BaseViewController.swift in Sources */,
+				FC6FE9F925120D9F00258A54 /* DiaryDetailView.swift in Sources */,
 				FC10D8C72511F713000214D3 /* Webservice.swift in Sources */,
+				FC6FE9EA251209A200258A54 /* BaseViewModel.swift in Sources */,
 				FC10D8C82511F713000214D3 /* Router.swift in Sources */,
 				FC6FE9E32512025200258A54 /* Constant.swift in Sources */,
+				FC6FE9FB25120E1900258A54 /* DiaryWrappers.swift in Sources */,
 				FC10D8AC2511F5B8000214D3 /* SceneDelegate.swift in Sources */,
+				FC6FE9EF25120B3000258A54 /* DiaryListTblVwCell.swift in Sources */,
 				FC6FE9E52512048C00258A54 /* MyDiaryData.swift in Sources */,
 				FC6FE9E1251201B600258A54 /* DatabaseManager.swift in Sources */,
 			);
@@ -487,7 +547,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MyDiary/Info.plist;
+				INFOPLIST_FILE = MyDiary/AppDelegate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,7 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MyDiary/Info.plist;
+				INFOPLIST_FILE = MyDiary/AppDelegate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="1862" y="139"/>
         </scene>
-        <!--My Entries-->
+        <!--My Diary-->
         <scene sceneID="a32-nP-DOO">
             <objects>
                 <viewController id="vaK-dl-jKm" customClass="DiaryListViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,7 +169,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kZu-To-ovL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Entries" id="8KB-ob-dej"/>
+                    <navigationItem key="navigationItem" title="My Diary" id="8KB-ob-dej"/>
                     <connections>
                         <outlet property="btnLoadData" destination="RTb-yv-2xQ" id="VFB-eh-qN4"/>
                         <outlet property="tblVwMyEntry" destination="FE7-rz-sYt" id="JBA-F4-sP6"/>

@@ -6,12 +6,12 @@ import RxCocoa
 final class DiaryDetailsView: UIView {
     
     //MARK: - Outlets
-    @IBOutlet private weak var vwParent           : UIView!
-    @IBOutlet private weak var lblTitle       : UILabel!
-    @IBOutlet private weak var lblDesc      : UILabel!
-    @IBOutlet private weak var lblDateTime   : UILabel!
-    @IBOutlet private weak var btnEdit       : UIButton!
-    @IBOutlet private weak var btnDelete     : UIButton!
+    @IBOutlet private weak var vwParent: UIView!
+    @IBOutlet private weak var lblTitle: UILabel!
+    @IBOutlet private weak var lblDesc: UILabel!
+    @IBOutlet private weak var lblDateTime: UILabel!
+    @IBOutlet private weak var btnEdit: UIButton!
+    @IBOutlet private weak var btnDelete: UIButton!
     
     //MARK: - Callbacks
     var editTap:((String) -> Void)?
@@ -27,7 +27,7 @@ final class DiaryDetailsView: UIView {
             lblTitle.text = diaryDetail.title
             lblDesc.text = diaryDetail.content
             DispatchQueue.main.async {
-                self.vwParent.dropShadow(color: .gray, opacity: 0.4, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
+                self.vwParent.dropShadow(color: .gray, opacity: 0.5, offSet: CGSize(width: -1, height: 1), radius: 3, scale: true)
             }
         }
     }
